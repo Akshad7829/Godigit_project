@@ -4,6 +4,7 @@ import java.util.NoSuchElementException;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.stereotype.Repository;
 
 import com.asn.model.StudentEntity;
@@ -13,6 +14,9 @@ import com.asn.model.StudentRepository;
 import com.asn.model.Studentdto;
 
 
+
+
+
 @Repository
 public class StudentDAOImple extends StudentDAOAddapter{
 	
@@ -20,34 +24,38 @@ public class StudentDAOImple extends StudentDAOAddapter{
 	private StudentRepository repo;
 	
 	@Override
-	public StudentEntity addData(StudentEntity entity) {
+	public StudentEntity addData (StudentEntity entity) throws DataIntegrityViolationException {
 		StudentEntity e = new StudentEntity();
-//		StudentEntity data = info.get();
-		Optional<StudentEntity> info = repo.findById(entity.getEmail());
-		if(info.isEmpty()) {
-			repo.save(entity);
-			return e;
+
+		try {
+		repo.save(entity);
+		System.out.println(e);
+		return e;
 		}
-		else {
-			return info.get();
+		catch(DataIntegrityViolationException ex) {
+			System.out.println(ex);
+			e.setEmail(entity.getEmail());
+			System.out.println(e);
+			return e;
 		}
 		
 	}
+	
 	@Override
 	public StudentEntity getData(StudentLogininfoEntity entity) {
 		StudentEntity e = new StudentEntity();
 		try {
-		Optional<StudentEntity> info = repo.findById(entity.getEmail());
-//		System.out.println(entity.getPassword());
+		Optional<StudentEntity> info = repo.findById(entity.getUser_id());
+		System.out.println(entity.getPassword());
 		StudentEntity data = info.get();
-//		System.out.println(info);
+		System.out.println(info);
 		
-		if(data.getEmail().equals(entity.getEmail())) {
+		if(data.getUser_id().equals(entity.getUser_id())) {
 			System.out.println("in if");
 //		    data = info.get();
 		   
 //		    System.out.println(entity.getPassword());
-		    if(data.getPassword().equals(entity.getPassword())) {
+			 if(data.getPassword().equals(entity.getPassword())) {
 //		    	System.out.println(data.getFname());
 		    	System.out.println(data);
 		    	System.out.println("end of if");
@@ -55,13 +63,12 @@ public class StudentDAOImple extends StudentDAOAddapter{
 			    
 
 		    }
-		    else {
-				return data;
-
-		    }
+			 else {
+				 return data;
+			 }
 		   
 		}
-//		else if(data.getEmail().equals(entity.getEmail()) ||  data.getPassword().equals(entity.getPassword())){
+//		else if(data.getUser_id().equals(entity.getUser_id()) ||  data.getPassword().equals(entity.getPassword())){
 //			System.out.println(data);
 //		
 //		}
@@ -77,3 +84,4 @@ public class StudentDAOImple extends StudentDAOAddapter{
 	}
 
 }
+

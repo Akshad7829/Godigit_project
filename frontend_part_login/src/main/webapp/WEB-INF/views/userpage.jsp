@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>Sorry , you dont have an account with ${email}</h1>
+<h1>${uname}</h1>
 </body>
 </html>

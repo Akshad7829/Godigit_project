@@ -7,6 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-<h1>please check your password</h1>
+<h1>in managerpage</h1>
 </body>
 </html>

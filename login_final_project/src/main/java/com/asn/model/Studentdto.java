@@ -9,10 +9,14 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Studentdto {
 	
-
-	private String email;
-	private String password;
-	private String fname;
-//	private String lname;
+	
+	  		private String email;
+			private String fname;
+			private String password;
+			private String role;
+			private String addres;
+			private Integer phone_no;
+			
+	
 
 }

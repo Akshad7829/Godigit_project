@@ -11,10 +11,10 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="studentlogininfo")
+@Table(name="godigit")
 public class StudentLogininfoEntity {
 	@Id
-	private String email;
+	private Integer user_id;
 	
 	private String password;
 }

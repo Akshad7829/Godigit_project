@@ -22,6 +22,7 @@ public class StudentServiceImple extends StudentServiceAddapter{
 	public Studentdto addData(Studentdto dto) {
 		ModelMapper mapper = new ModelMapper();
 		StudentEntity entitydata= mapper.map(dto, StudentEntity.class);
+		
 		StudentEntity info2 = dao.addData(entitydata);
 		Studentdto data = mapper.map(info2, Studentdto.class);
 		return data;	}

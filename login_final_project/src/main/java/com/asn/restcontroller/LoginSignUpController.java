@@ -27,46 +27,44 @@ public class LoginSignUpController {
 	@Autowired
 	private StudentServiceInter service;
 	
-	@GetMapping("signup/{email}/{password}/{fname}")
-//	@PostMapping("signup")
+	@GetMapping("signup/{email}/{fname}/{password}/{role}/{addres}/{phone_no}")
 
-	public Studentdto addData(@PathVariable String email , @PathVariable String password , @PathVariable String fname) {
-//	public Studentdto addData(@RequestBody Studentdto dto) {
-
+	public Studentdto addData(@PathVariable  String email ,@PathVariable String fname,@PathVariable String password,@PathVariable String role,@PathVariable String addres,@PathVariable Integer phone_no ) {
 		Studentdto e = new Studentdto();
 		Studentdto e1 = new Studentdto();
-		e1.setEmail(email);
 		e1.setFname(fname);
+		e1.setEmail(email);
 		e1.setPassword(password);
-		System.out.println(e1);
-		Studentdto data = service.addData(e1);
-		System.out.println(e1);
+		e1.setRole(role);
+		e1.setPhone_no(phone_no);
+		e1.setAddres(addres);
 		
-//		System.out.println(dto.getEmail());
-//		if(data ==null) {
+		Studentdto data = service.addData(e1);
+		
+		if(data.getFname() ==null) {
 			System.out.println(data);
 			return data;
-//		}
-//		return e1;
+		}
+		return e1;
 
 //		service.addData(dto);
 		
 		
 	}
 	
-	@GetMapping("login/{email}/{password}")
-	public Studentdto getData(@PathVariable String email , @PathVariable String password ) {
+	@GetMapping("login/{user_id}/{password}")
+	public Studentdto getData(@PathVariable Integer user_id , @PathVariable String password ) {
 		Studentdto e = new Studentdto();
 
 		StudentLoginInfo e1 = new StudentLoginInfo();
-		e1.setEmail(email);
+		e1.setUser_id(user_id);
 		e1.setPassword(password);
 		System.out.println(e1);
 		Studentdto data = service.getData(e1);
-//		System.out.println(data);
 		
 		System.out.println(data);
-		System.out.println(data +"in controller");
+		
+
 		
 		
 		return data;
