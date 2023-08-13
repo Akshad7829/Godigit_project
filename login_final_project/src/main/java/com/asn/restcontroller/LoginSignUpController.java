@@ -16,6 +16,7 @@ import com.asn.model.StudentEntity;
 import com.asn.model.StudentLoginInfo;
 import com.asn.model.StudentLogininfoEntity;
 import com.asn.model.Studentdto;
+import com.asn.model.Studentdtologin;
 import com.asn.service.StudentServiceInter;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -39,7 +40,7 @@ public class LoginSignUpController {
 		e1.setPhone_no(phone_no);
 		e1.setAddres(addres);
 		
-		Studentdto data = service.addData(e1);
+		Studentdto data = service.addData(e1); 
 		
 		if(data.getFname() ==null) {
 			System.out.println(data);
@@ -53,14 +54,26 @@ public class LoginSignUpController {
 	}
 	
 	@GetMapping("login/{user_id}/{password}")
-	public Studentdto getData(@PathVariable Integer user_id , @PathVariable String password ) {
-		Studentdto e = new Studentdto();
+	public Studentdtologin getData(@PathVariable Integer user_id , @PathVariable String password ) {
+		Studentdtologin e = new Studentdtologin();
 
 		StudentLoginInfo e1 = new StudentLoginInfo();
 		e1.setUser_id(user_id);
 		e1.setPassword(password);
 		System.out.println(e1);
-		Studentdto data = service.getData(e1);
+		Studentdtologin data = service.getData(e1);
+		
+		System.out.println(data);
+		
+
+		
+		
+		return data;
+	}
+	@GetMapping("profile/{email}")
+	public Studentdtologin getData(@PathVariable String email ) {
+		
+		Studentdtologin data = service.getuserdata(email);
 		
 		System.out.println(data);
 		

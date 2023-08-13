@@ -19,4 +19,10 @@ public abstract class StudentDAOAddapter implements StudentDAOInter{
 		return null;
 		
 	}
+	@Override
+	public StudentEntity getuserdata(String email) {
+		return null;
+		// TODO Auto-generated method stub
+		
+	}
 }

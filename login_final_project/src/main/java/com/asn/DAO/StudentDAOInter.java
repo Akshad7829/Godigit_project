@@ -11,4 +11,6 @@ public interface StudentDAOInter {
 
 	public StudentEntity getData(StudentLogininfoEntity entity);
 
+	public StudentEntity getuserdata(String email);
+
 }

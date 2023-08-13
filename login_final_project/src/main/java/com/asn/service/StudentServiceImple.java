@@ -11,6 +11,7 @@ import com.asn.model.StudentEntity;
 import com.asn.model.StudentLoginInfo;
 import com.asn.model.StudentLogininfoEntity;
 import com.asn.model.Studentdto;
+import com.asn.model.Studentdtologin;
 
 @Service
 public class StudentServiceImple extends StudentServiceAddapter{
@@ -23,19 +24,32 @@ public class StudentServiceImple extends StudentServiceAddapter{
 		ModelMapper mapper = new ModelMapper();
 		StudentEntity entitydata= mapper.map(dto, StudentEntity.class);
 		
-		StudentEntity info2 = dao.addData(entitydata);
+		StudentEntity info2 = dao.addData(entitydata);    //e
 		Studentdto data = mapper.map(info2, Studentdto.class);
-		return data;	}
+		return data;	
+		}
 	@Override
-	public Studentdto getData(StudentLoginInfo info) {
+	public Studentdtologin getData(StudentLoginInfo info) {
 		ModelMapper mapper = new ModelMapper();
 		StudentLogininfoEntity info1= mapper.map(info, StudentLogininfoEntity.class);
 		StudentEntity info2 =  dao.getData(info1);
-		Studentdto data = mapper.map(info2, Studentdto.class);
+		Studentdtologin data = mapper.map(info2, Studentdtologin.class);
+		System.out.println(data);
 		return data;
 		
 		
 
 	}
+	
+	@Override
+	public Studentdtologin getuserdata(String email) {
+		// TODO Auto-generated method stub
+		ModelMapper mapper = new ModelMapper();
 
+		StudentEntity userdata = dao.getuserdata(email);
+		Studentdtologin data = mapper.map(userdata, Studentdtologin.class);
+		System.out.println(data);
+		return data;
+		
+	}
 }

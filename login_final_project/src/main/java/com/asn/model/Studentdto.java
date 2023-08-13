@@ -8,15 +8,13 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class Studentdto {
-	
-	
-	  		private String email;
-			private String fname;
-			private String password;
-			private String role;
-			private String addres;
-			private Integer phone_no;
-			
-	
+
+
+	private String email;
+	private String fname;
+	private String password;
+	private String role;
+	private String addres;
+	private Integer phone_no;
 
 }

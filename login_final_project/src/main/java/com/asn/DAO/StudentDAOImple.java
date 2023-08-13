@@ -41,6 +41,18 @@ public class StudentDAOImple extends StudentDAOAddapter{
 		
 	}
 	
+	
+	@Override
+	public StudentEntity getuserdata(String email) {
+		StudentEntity e = new StudentEntity();
+		
+//		Optional<StudentEntity> info = repo.findById(email);
+		Optional<StudentEntity> info = repo.findByemail(email);
+		StudentEntity data = info.get();
+		System.out.println(info);
+		return data;
+	}
+		
 	@Override
 	public StudentEntity getData(StudentLogininfoEntity entity) {
 		StudentEntity e = new StudentEntity();
@@ -57,7 +69,7 @@ public class StudentDAOImple extends StudentDAOAddapter{
 //		    System.out.println(entity.getPassword());
 			 if(data.getPassword().equals(entity.getPassword())) {
 //		    	System.out.println(data.getFname());
-		    	System.out.println(data);
+//		    	System.out.println(data);
 		    	System.out.println("end of if");
 			    return data;
 			    

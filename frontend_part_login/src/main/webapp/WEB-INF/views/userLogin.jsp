@@ -11,9 +11,11 @@
  <style><%@include file="../css/style.css"%></style>
     </head>
     <body>
+   
+    
         <nav class="navbar navbar-expand-lg  ">
             <div class="container-fluid">
-              <a class="navbar-brand" href="./index.html">Library</a>
+              <a class="navbar-brand" href="home">Library</a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
               </button>
@@ -31,13 +33,7 @@
                     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                       Login
                     </a>
-                    <ul class="dropdown-menu">
-                      <li id="user"><a class="dropdown-item" href="userLogin.html">User Login</a></li>
-                      <li><hr class="dropdown-divider"></li>
-                      <li id="admin"><a class="dropdown-item" href="adminLogin.html">Admin Login</a></li>
-                      <li id="library"><hr class="dropdown-divider"></li>
-                      <li><a class="dropdown-item" href="libraryLogin.html">Library Login</a></li>
-                    </ul>
+                   
                   </li>
                  
                   </li>
@@ -48,23 +44,24 @@
         
         
         <div>
-      <form class="form">
-        <h1 style="text-align: center;">User Login</h1>
+      <form class="form" action ="login" method="post">
+        <h1 style="text-align: center;"> Login</h1>
           <div class="mb-3">
-            <label for="exampleInputEmail1" class="form-label">Email address</label>
-            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            <label for="exampleInputEmail1" class="form-label">User Id</label>
+            <input type="number" name ="user_id" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text"></div>
           </div>
           <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Password</label>
-            <input type="password" class="form-control" id="exampleInputPassword1">
+            <input type="password" name ="password"class="form-control" id="exampleInputPassword1">
           </div>
           <div class="btns">
             <button type="submit" class="btn btn-primary">Login</button>
             <p>New User ? <a href="signup">Register Here</a></p>
           </div>
         </form>
-    </div>
+    </div><br>
+    <p  style="height: 50px; width:300px; margin:30px auto 0 auto;">Made with ❤ By Team TechnoStrikers</p>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
     
   </body>

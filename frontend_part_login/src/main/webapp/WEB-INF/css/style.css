@@ -1,7 +1,68 @@
+/* .home{ */
+/*     width: 100%; */
+/*     height: 90vh; */
+/*     background-image: url(../lms_img/homepagepic.jpg); */
+/*     background-size: cover; */
+/*     background-repeat: no-repeat; */
+/*     display: flex; */
+/*     align-items: center; */
+/*     justify-content: center; */
+/* } */
+/* .box{ */
+/*     width: 80%; */
+/*     height:300px; */
+/*     background-color: rgba(35, 34, 34, 0.358); */
+/*     color: white; */
+/* } */
+/* nav{ */
+/*     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px; */
+/*     background-color: rgb(0, 187, 255); */
+/*     color: white; */
+/* } */
+/* input::-webkit-outer-spin-button, */
+/*       input::-webkit-inner-spin-button { */
+/*         display: none; */
+/*       } */
+/* .members{ */
+/*     width:50%; */
+/*     margin:0px auto; */
+/* } */
+/* .members ul{ */
+/*     width:80%; */
+/*     list-style: none; */
+/*     margin:0px auto; */
+/* } */
+/* body{ */
+/*     background-color: rgba(245, 245, 220, 0.566); */
+/* } */
+/* .nav-link:hover{ */
+/*     text-decoration: underline; */
+/* } */
+/* .form{ */
+/*     width:50%; */
+/*     height: auto; */
+/*     margin: 50px auto; */
+/*     border: 2px solid black; */
+/*     padding: 30px; */
+/*     background-color: aliceblue; */
+/*     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px, rgba(0, 0, 0, 0.3) 0px 8px 16px -8px; */
+/* } */
+/* .btns{ */
+/*     width: 100%; */
+/*     display: flex; */
+/*     align-items: center; */
+/*     justify-content: center; */
+/*     flex-direction: column; */
+/* } */
+/* .btn{ */
+/*     width:80%; */
+/*     margin-bottom: 10px; */
+/* } */
+
 .home{
     width: 100%;
     height: 90vh;
-    background-image: url(../lms_img/homepagepic.jpg);
+    background-image: url(https://media.istockphoto.com/id/1200326335/photo/library-bookshelves-with-books-and-textbooks-learning-and-education-concept.jpg?b=1&s=612x612&w=0&k=20&c=Awhrw1uzRk8An7weC-8zt3cDT2aYgBpgfhh2b7qkSIc=);
     background-size: cover;
     background-repeat: no-repeat;
     display: flex;
@@ -11,7 +72,7 @@
 .box{
     width: 80%;
     height:300px;
-    background-color: rgba(35, 34, 34, 0.358);
+    background-color: rgb(0 0 0 / 70%);
     color: white;
 }
 nav{
@@ -58,3 +119,24 @@ body{
     width:80%;
     margin-bottom: 10px;
 }
+.bookList{
+    width:80%;
+    height: auto;
+    margin: 30px auto;
+}
+table{
+    margin:0px auto;
+}
+table,th,tr,td{
+    border: 2px solid black;
+}
+th,td{
+    padding: 10px;
+}
+.bookName{
+    padding-right:500px ;
+}
+body {
+    background-image: url("./images/fine.jpg");
+}
+
