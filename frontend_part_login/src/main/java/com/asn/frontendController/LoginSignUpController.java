@@ -25,6 +25,7 @@ import com.asn.model.BookRepositry;
 import com.asn.service.bookServiceimple;
 
 @Controller
+
 public class LoginSignUpController {
 
 	@Autowired
@@ -37,7 +38,22 @@ public class LoginSignUpController {
 	public String get() {
 		return "index";
 	}
+	
+	@RequestMapping("updateprofile")
+	@PostMapping
+	
+	public ModelAndView getprofiledata(@RequestParam String email ) {
+		ModelAndView mv = new ModelAndView();
+		String url = "http://localhost:8000/main/profile/" + email;
+		RestTemplate template = new RestTemplate();
+		UserAllDetails details = template.getForObject(url, UserAllDetails.class);
+		mv.addObject("userprofile", details);
 
+
+		mv.setViewName("profiledata");
+
+		return mv;
+	}
 	String emaill = "";
 
 	// mapping for adding books
@@ -88,7 +104,24 @@ public class LoginSignUpController {
 		RestTemplate template = new RestTemplate();
 		UserAllDetails details = template.getForObject(url, UserAllDetails.class);
 		mv.addObject("userprofile", details);
+
+
 		mv.setViewName("profilepage");
+
+		return mv;
+
+	}
+	@PostMapping
+	public ModelAndView savedprofilepage(@RequestParam String email) {
+		ModelAndView mv = new ModelAndView();
+		String url = "http://localhost:8000/main/profile/" + email;
+		RestTemplate template = new RestTemplate();
+		UserAllDetails details = template.getForObject(url, UserAllDetails.class);
+		mv.addObject("userprofile", details);
+
+
+		mv.setViewName("profilepage");
+
 		return mv;
 
 	}

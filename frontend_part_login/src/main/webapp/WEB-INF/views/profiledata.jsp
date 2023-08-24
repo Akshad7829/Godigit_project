@@ -52,15 +52,15 @@
         </div>
         <div>
             <p><b>UserId: </b>${userprofile.user_id}</p>
-            <p><b>Name: </b>${userprofile.fname}</p>
+            <p><b>Name: </b><input  value="${userprofile.fname}"></p>
             <p><b>Email: </b>${userprofile.email}</p>
-            <p><b>Address : </b>${userprofile.addres} </p>
-            <p><b>Phone No.: </b>${userprofile.phone_no}</p>
+            <p><b>Address : </b><input  value="${userprofile.addres}"></p>
+            <p><b>Phone No.: </b><input  value="${userprofile.phone_no}"></p>
             <p><b>Role: </b>${userprofile.role}</p>
-			<form action="updateprofile" method ="post" >
-                <input name=email type="hidden" value="${userprofile.email}" />
-                    <input type="submit" class="btn" style="background-color:#e79b54; font-weight:bold;" href="updateprofile" value="Update"></input>
-                    </form>
+			<form action  = "saveeprofile" method ="get">
+			                <input name=email type="hidden" value="${userprofile.email}" />
+                <a  href = "updateprofile"class="btn btn-primary link">Update</a>
+                </form>
         </div>
 <!--  		<div class="chotaBox" style="background-image:linear-gradient(rgba(255, 255, 0, 0.475),pink);"> -->
 			
